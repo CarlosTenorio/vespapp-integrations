@@ -2,5 +2,6 @@
 *.idea/
 
 # Others folder and files
+twitter_integration/keys.py
 *.pyc
 *__pycache__
