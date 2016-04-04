@@ -9,7 +9,7 @@ class TweetListener(tweepy.StreamListener):
 
     def __init__(self, tweet):
         self.tweet = tweet
-        self.url = 'http://localhost/api'
+        self.url = 'http://avispamiento.uib.es/api'
 
     def on_data(self, data):
         # Twitter returns data in JSON format
