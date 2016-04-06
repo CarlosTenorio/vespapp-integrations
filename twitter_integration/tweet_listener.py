@@ -9,7 +9,7 @@ class TweetListener(tweepy.StreamListener):
 
     def __init__(self, tweet):
         self.tweet = tweet
-        self.url = 'http://avispamiento.uib.es/api'
+        self.url = 'http://localhost/api'
 
     def on_data(self, data):
         # Twitter returns data in JSON format
@@ -26,6 +26,10 @@ class TweetListener(tweepy.StreamListener):
             if tweet['place']:
                 payload['lat'] = tweet['place']['bounding_box']['coordinates'][0][0][1]
                 payload['lng'] = tweet['place']['bounding_box']['coordinates'][0][0][0]
+
+            if tweet['geo']:
+                payload['lat'] = tweet['geo']['coordinates'][0]
+                payload['lng'] = tweet['geo']['coordinates'][1]
 
             # Create sighting
             response = requests.post(self.url + '/sightings/', data=payload)
