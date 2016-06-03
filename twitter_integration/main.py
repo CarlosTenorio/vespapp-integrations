@@ -22,4 +22,4 @@ if __name__ == '__main__':
     t_list = tweet_listener.TweetListener(tweet)
 
     stream = tweepy.Stream(auth, t_list)
-    stream.filter(track=['@avispamiento', '#avispamiento', '#stopvespa'])
+    stream.filter(track=['@vespapp', '#vespapp', '#stopvespa'])

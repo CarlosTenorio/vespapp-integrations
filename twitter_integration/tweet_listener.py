@@ -39,7 +39,7 @@ class TweetListener(tweepy.StreamListener):
 
                 # Reply the tweet
                 nick_name = tweet['user']['screen_name']
-                text = 'Gracias por enviar este avispamiento! #avispamiento #stopvespa'
+                text = 'Gracias por enviar este avispamiento! #vespapp #stopvespa'
                 in_reply_to_status_id = tweet['id_str']
                 self.tweet.reply(nick_name, text, in_reply_to_status_id)
 
